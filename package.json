@@ -1,0 +1,14 @@
+{
+  "name": "nitpix-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo of plotly/nitpix: GitHub-Actions-native visual diffing",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "capture": "node capture.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

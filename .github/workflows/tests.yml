@@ -1,0 +1,36 @@
+name: Tests
+
+# The unprivileged half of the nitpix flow: capture snapshot PNGs and upload
+# them as artifacts. Needs no secrets or write permissions, so it works
+# identically for same-repo, fork, and Dependabot PRs.
+# The privileged half (diff/report/promote) is nitpix.yml, via workflow_run.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  visual:
+    name: Capture visual snapshots
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Capture snapshots
+        run: node capture.mjs
+
+      - name: Upload snapshots
+        uses: plotly/nitpix/upload@main
+        with:
+          name: demo

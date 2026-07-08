@@ -1,0 +1,35 @@
+name: nitpix
+
+# The privileged half of the visual flow, running in the base-repo context via
+# workflow_run (so it works for fork and Dependabot PRs too):
+# - PR test runs: diff snapshots against baselines/<base-branch>/ on the
+#   `nitpix` orphan branch, post the review comment, set the `nitpix/visual`
+#   commit status. Approve with a `/nitpix approve` comment.
+# - push runs on main: promote that run's snapshots to the new baselines.
+#
+# SECURITY: never check out or execute PR code in this workflow.
+
+on:
+  workflow_run:
+    workflows: [Tests]
+    types: [completed]
+
+permissions:
+  contents: write        # push to the baseline branch
+  pull-requests: write   # the review comment
+  statuses: write        # the nitpix/visual check
+
+concurrency:
+  group: nitpix-${{ github.event.workflow_run.head_sha }}
+  cancel-in-progress: true
+
+jobs:
+  visual-review:
+    name: Visual Review
+    runs-on: ubuntu-latest
+    if: |
+      github.event.workflow_run.conclusion == 'success' &&
+      (github.event.workflow_run.event == 'pull_request' ||
+       github.event.workflow_run.event == 'push')
+    steps:
+      - uses: plotly/nitpix@main

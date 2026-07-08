@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nitpix demo — report</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1><span class="logo"></span>Acme Analytics</h1>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a class="active" href="report.html">Report</a>
+    </nav>
+  </header>
+
+  <section class="panel">
+    <h2>Regions</h2>
+    <table>
+      <thead>
+        <tr><th>Region</th><th>Sessions</th><th>Conversion</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>North America</td><td>41,203</td><td>4.8%</td><td><span class="badge">healthy</span></td></tr>
+        <tr><td>Europe</td><td>28,441</td><td>4.1%</td><td><span class="badge">healthy</span></td></tr>
+        <tr><td>Asia-Pacific</td><td>19,772</td><td>3.4%</td><td><span class="badge warn">degraded</span></td></tr>
+        <tr><td>South America</td><td>8,105</td><td>2.9%</td><td><span class="badge">healthy</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+</body>
+</html>
