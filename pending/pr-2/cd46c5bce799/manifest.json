@@ -1,0 +1,39 @@
+{
+  "pr": 2,
+  "headSha": "cd46c5bce799a7d63bedffec055416f7402739dc",
+  "base": "main",
+  "results": [
+    {
+      "name": "index@1280.png",
+      "status": "unchanged",
+      "hash": "5748793dc56aff4e2fb6e0f61a8bc46fee1aafe43e0fa6f1b1beccda37c74239"
+    },
+    {
+      "name": "index@800.png",
+      "status": "unchanged",
+      "hash": "ae19e7397525ef4bef64748ddf6ca4430ad96fc7d84c36615bd1938f8ddd2ba2"
+    },
+    {
+      "name": "report@1280.png",
+      "status": "changed",
+      "hash": "f918d352a99c27bf5892b872a39badf764a547382e22135bcbdea6cd899dfc90",
+      "diffPercentage": 0.53
+    },
+    {
+      "name": "report@800.png",
+      "status": "changed",
+      "hash": "c83f31fd683854da490cc877abb08bcb3fbcbadb9601264be8f335357379306c",
+      "diffPercentage": 0.82
+    },
+    {
+      "name": "settings@1280.png",
+      "status": "added",
+      "hash": "63d890876c67602be41ed18a3fc3f4e32d1adee3714479ce8e0e1f02b2069742"
+    },
+    {
+      "name": "settings@800.png",
+      "status": "added",
+      "hash": "c7fa5b29e1aee87f9fc49ad9040d46c62ceed1bdafa53b73744b31552be4352f"
+    }
+  ]
+}
