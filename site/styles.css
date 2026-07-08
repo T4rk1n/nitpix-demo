@@ -147,9 +147,12 @@ th, td {
 }
 
 th {
-  color: var(--muted);
-  font-weight: 600;
-  font-size: 13px;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #eef2ff;
 }
 
 .badge {

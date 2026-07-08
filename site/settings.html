@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nitpix demo — settings</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .setting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .setting:last-child { border-bottom: none; }
+  .setting .name { font-size: 14px; font-weight: 600; }
+  .setting .hint { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .toggle {
+    width: 42px;
+    height: 24px;
+    border-radius: 999px;
+    background: #d1d5db;
+    position: relative;
+  }
+  .toggle.on { background: var(--accent); }
+  .toggle::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+  }
+  .toggle.on::after { left: 21px; }
+</style>
+</head>
+<body>
+  <header>
+    <h1><span class="logo"></span>Acme Analytics</h1>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="report.html">Report</a>
+      <a class="active" href="settings.html">Settings</a>
+    </nav>
+  </header>
+
+  <section class="panel">
+    <h2>Notifications</h2>
+    <div class="setting">
+      <div>
+        <div class="name">Weekly digest</div>
+        <div class="hint">A summary of your metrics, every Monday.</div>
+      </div>
+      <div class="toggle on"></div>
+    </div>
+    <div class="setting">
+      <div>
+        <div class="name">Anomaly alerts</div>
+        <div class="hint">Get notified when a metric moves more than 2σ.</div>
+      </div>
+      <div class="toggle on"></div>
+    </div>
+    <div class="setting">
+      <div>
+        <div class="name">Product updates</div>
+        <div class="hint">Occasional news about new features.</div>
+      </div>
+      <div class="toggle"></div>
+    </div>
+  </section>
+</body>
+</html>
